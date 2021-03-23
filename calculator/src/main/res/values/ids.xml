@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="button_plus" type="id">button_plus</item>
-    <item name="button_del" type="id">button_del</item>
-    <item name="button_minus" type="id">button_minus</item>
-    <item name="guidelineOfTop" type="id">guidelineOfTop</item>
-    <item name="button_equals" type="id">button_equals</item>
-</resources>
