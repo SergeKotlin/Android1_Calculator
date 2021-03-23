@@ -40,4 +40,5 @@
     <string name="_del">del</string>
     <string name="_plus">+</string>
     <string name="_minus">-</string>
+    <string name="textWorkView">результат</string>
 </resources>

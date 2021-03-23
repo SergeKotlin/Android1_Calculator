@@ -4,4 +4,6 @@
     <dimen name="button_text">13sp</dimen>
     <dimen name="size_num_buttons">60dp</dimen>
     <dimen name="size_spec_buttons">70dp</dimen>
+    <dimen name="size_work_text_view">250dp</dimen>
+    <dimen name="sizeTextWorkView">20sp</dimen>
 </resources>
