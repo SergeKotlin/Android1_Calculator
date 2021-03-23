@@ -7,6 +7,8 @@ import androidx.constraintlayout.widget.Group;
 import android.os.Bundle;
 import android.view.View;
 
+import com.android1.hw2_android1.R;
+
 public class Lesso2Activity extends AppCompatActivity {
 
     @Override
