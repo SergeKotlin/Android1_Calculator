@@ -5,5 +5,7 @@
     <dimen name="size_num_buttons">60dp</dimen>
     <dimen name="size_spec_buttons">70dp</dimen>
     <dimen name="size_work_text_view">250dp</dimen>
-    <dimen name="sizeTextWorkView">20sp</dimen>
+    <dimen name="sizeInputView">20sp</dimen>
+    <dimen name="sizeResultView">20sp</dimen>
+    <dimen name="horizontalTopGuideline">20dp</dimen>
 </resources>
