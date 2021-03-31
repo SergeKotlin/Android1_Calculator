@@ -2,6 +2,7 @@ package com.android1.hw2_android1;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,8 +38,10 @@ public class CalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         ConstraintLayout calc_layout = findViewById(R.id.calculator_layout_id);
-        calc_layout.setBackgroundResource(R.drawable.ic_bender_xml);
 //        calc_layout.setBackgroundResource(R.drawable.ic_launcher_background);
+//        calc_layout.setBackgroundResource(R.drawable.ic_bender_xml);
+        LinearLayout calc_linear_layout = findViewById(R.id.calculator_linear_layout_id);
+        calc_linear_layout.setBackgroundResource(R.drawable.ic_bender_xml);
 
         findViews();
         setIncreaseCounterBtnBehaviour();

@@ -31,7 +31,8 @@ public class Calculations {
         }
     }
 
-//    TODO Падает при выполнении операторов с пустым значением строки
+//    TODO #1Падает при выполнении операторов с пустым значением строки
+//    TODO #2Бесконечно выходит за экран. Например, офисные калькуляторы бывают 12 и 14 разрядные
     public Double calculate(String calculateCmd) {
         if (!calculateCmd.equals("=")) {
             currentCmd = calculateCmd;

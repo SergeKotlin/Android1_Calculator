@@ -4,8 +4,12 @@
     <dimen name="button_text">13sp</dimen>
     <dimen name="size_num_buttons">60dp</dimen>
     <dimen name="size_spec_buttons">70dp</dimen>
-    <dimen name="size_work_text_view">250dp</dimen>
-    <dimen name="sizeInputView">20sp</dimen>
-    <dimen name="sizeResultView">20sp</dimen>
+    <dimen name="width_work_text_view">250dp</dimen>
+    <dimen name="width_result_text_view_landscape">300dp</dimen>
+    <dimen name="height_work_text_view">40dp</dimen>
+    <dimen name="height_result_text_view_landscape">50dp</dimen>
+    <dimen name="sizeTextInputView">20sp</dimen>
+    <dimen name="sizeTextResultView">20sp</dimen>
+    <dimen name="sizeTextResultView_landscape">24sp</dimen>
     <dimen name="horizontalTopGuideline">20dp</dimen>
 </resources>
