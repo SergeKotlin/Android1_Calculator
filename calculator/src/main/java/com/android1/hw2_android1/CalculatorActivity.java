@@ -27,6 +27,8 @@ public class CalculatorActivity extends AppCompatActivity {
     private Button btn_del;
     private Button btn_plus;
     private Button btn_minus;
+    private Button btn_increase;
+    private Button btn_division;
     private Button btn_equals;
     private final Calculations calculations = new Calculations();
 
@@ -66,6 +68,8 @@ public class CalculatorActivity extends AppCompatActivity {
 
         btn_plus = findViewById(R.id.calc_btn_plus);
         btn_minus = findViewById(R.id.calc_btn_minus);
+        btn_increase = findViewById(R.id.calc_btn_increase);
+        btn_division = findViewById(R.id.calc_btn_division);
         btn_equals = findViewById(R.id.calc_btn_equals);
         btn_del = findViewById(R.id.calc_btn_delete);
     }
@@ -109,6 +113,12 @@ public class CalculatorActivity extends AppCompatActivity {
         });
         btn_minus.setOnClickListener(v -> {
             actionsWithOperator("-", false);
+        });
+        btn_increase.setOnClickListener(v -> {
+            actionsWithOperator("*", false);
+        });
+        btn_division.setOnClickListener(v -> {
+            actionsWithOperator("/", false);
         });
         btn_equals.setOnClickListener(v -> {
             actionsWithOperator("=", true);

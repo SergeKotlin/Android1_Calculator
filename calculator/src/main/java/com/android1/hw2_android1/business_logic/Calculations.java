@@ -18,7 +18,7 @@ public class Calculations {
 
     private String makeResultString() {
         NumberFormat numberFormat = NumberFormat.getNumberInstance();
-        numberFormat.setMaximumFractionDigits(0);
+        numberFormat.setMaximumFractionDigits(3);
         numberFormat.setGroupingUsed(false);
         return numberFormat.format(currentResult);
     }
@@ -31,6 +31,7 @@ public class Calculations {
         }
     }
 
+//    TODO Падает при выполнении операторов с пустым значением строки
     public Double calculate(String calculateCmd) {
         if (!calculateCmd.equals("=")) {
             currentCmd = calculateCmd;
@@ -43,6 +44,14 @@ public class Calculations {
             }
             if (currentCmd.equals("-")) {
                 currentResult -= Double.parseDouble(valueToCalculate);
+                resetCalculateValuesBuffer();
+            }
+            if (currentCmd.equals("*")) {
+                currentResult *= Double.parseDouble(valueToCalculate);
+                resetCalculateValuesBuffer();
+            }
+            if (currentCmd.equals("/")) {
+                currentResult /= Double.parseDouble(valueToCalculate);
                 resetCalculateValuesBuffer();
             }
         }
