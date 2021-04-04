@@ -8,4 +8,6 @@
     <dimen name="sizeInputView">20sp</dimen>
     <dimen name="sizeResultView">20sp</dimen>
     <dimen name="horizontalTopGuideline">20dp</dimen>
+    <!--  Lesson4  -->
+    <dimen name="textSize">30sp</dimen>
 </resources>
