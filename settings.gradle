@@ -1,2 +1,3 @@
+include ':lesson4stylesandthemes'
 include ':calculator'
 rootProject.name = "HW2_Android1"
