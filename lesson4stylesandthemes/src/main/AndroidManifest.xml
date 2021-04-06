@@ -8,14 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HW2_Android1">
-        <activity android:name=".Lesson4_2_StylesAndThemes_Activity">
+        android:theme="@style/ThemeHW2_Android1">
+
+        <!--        <activity android:name=".Lesson4_2_StylesAndThemes_Activity">-->
+        <activity android:name=".Lesson4_2_StylesAndThemes_Activity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".secondSpecialActivity"
+            android:theme="@style/ThemeHW2_Android1_NoBar" />
+
     </application>
 
 </manifest>
