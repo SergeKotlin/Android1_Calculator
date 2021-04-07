@@ -36,7 +36,11 @@ public class Calculations {
     public Double calculate(String calculateCmd) {
         if (!calculateCmd.equals("=")) {
             currentCmd = calculateCmd;
-            currentResult = Double.parseDouble(valueToCalculate);
+            if (!valueToCalculate.equals("")) {
+                currentResult = Double.parseDouble(valueToCalculate);
+            } else {
+                currentResult = 0.0d;
+            }
             resetCalculateValuesBuffer(false);
         } else {
             if (currentCmd.equals("+")) {

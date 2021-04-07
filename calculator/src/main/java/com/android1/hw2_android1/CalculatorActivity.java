@@ -15,16 +15,9 @@ public class CalculatorActivity extends AppCompatActivity {
     // Объявлю все свои штучки
     private TextView inputText;
     private TextView resultText;
-    private Button btn_1;
-    private Button btn_2;
-    private Button btn_3;
-    private Button btn_4;
-    private Button btn_5;
-    private Button btn_6;
-    private Button btn_7;
-    private Button btn_8;
-    private Button btn_9;
-    private Button btn_0;
+    private final int[] numberButtonIds = new int[]{R.id.calc_btn_0, R.id.calc_btn_1,
+            R.id.calc_btn_2, R.id.calc_btn_3, R.id.calc_btn_4, R.id.calc_btn_5, R.id.calc_btn_6,
+            R.id.calc_btn_7, R.id.calc_btn_8, R.id.calc_btn_9};
     private Button btn_del;
     private Button btn_plus;
     private Button btn_minus;
@@ -45,6 +38,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
         findViews();
         setIncreaseCounterBtnBehaviour();
+        setNumberButtonListeners();
     }
 
 // Label for next update
@@ -58,16 +52,6 @@ public class CalculatorActivity extends AppCompatActivity {
     private void findViews() {
         inputText = findViewById(R.id.calc_inputTextView);
         resultText = findViewById(R.id.calc_resultText);
-        btn_1 = findViewById(R.id.calc_btn_1);
-        btn_2 = findViewById(R.id.calc_btn_2);
-        btn_3 = findViewById(R.id.calc_btn_3);
-        btn_4 = findViewById(R.id.calc_btn_4);
-        btn_5 = findViewById(R.id.calc_btn_5);
-        btn_6 = findViewById(R.id.calc_btn_6);
-        btn_7 = findViewById(R.id.calc_btn_7);
-        btn_8 = findViewById(R.id.calc_btn_8);
-        btn_9 = findViewById(R.id.calc_btn_9);
-        btn_0 = findViewById(R.id.calc_btn_0);
 
         btn_plus = findViewById(R.id.calc_btn_plus);
         btn_minus = findViewById(R.id.calc_btn_minus);
@@ -78,36 +62,6 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void setIncreaseCounterBtnBehaviour() {
-        btn_1.setOnClickListener(v -> {
-            actionsWithNumbers("1");
-        });
-        btn_2.setOnClickListener(v -> {
-            actionsWithNumbers("2");
-        });
-        btn_3.setOnClickListener(v -> {
-            actionsWithNumbers("3");
-        });
-        btn_4.setOnClickListener(v -> {
-            actionsWithNumbers("4");
-        });
-        btn_5.setOnClickListener(v -> {
-            actionsWithNumbers("5");
-        });
-        btn_6.setOnClickListener(v -> {
-            actionsWithNumbers("6");
-        });
-        btn_7.setOnClickListener(v -> {
-            actionsWithNumbers("7");
-        });
-        btn_8.setOnClickListener(v -> {
-            actionsWithNumbers("8");
-        });
-        btn_9.setOnClickListener(v -> {
-            actionsWithNumbers("9");
-        });
-        btn_0.setOnClickListener(v -> {
-            actionsWithNumbers("0");
-        });
         btn_del.setOnClickListener(v -> {
             actionsWithNumbers("d");
         });
@@ -127,6 +81,14 @@ public class CalculatorActivity extends AppCompatActivity {
             actionsWithOperator("=", true);
             updateVariableText("");
         });
+    }
+
+    private void setNumberButtonListeners() {
+        for (int i = 0; i < numberButtonIds.length; i++) {
+            int index = i;
+            findViewById(numberButtonIds[i]).setOnClickListener(v ->
+                    actionsWithNumbers(String.valueOf(index)));
+        }
     }
 
     private void actionsWithNumbers(String s) {
@@ -156,6 +118,6 @@ public class CalculatorActivity extends AppCompatActivity {
     Продумайте, каким образом будете хранить введённые пользователем данные.
 (– элементарным. В рамках одной сессии. И без мудреных словарей. Сэнсэй сказал над этим пока
  не заморачиваться)
-3. * Создайте макет калькулятора для горизонтальной ориентации экрана и отображайте
+✓ 3. * Создайте макет калькулятора для горизонтальной ориентации экрана и отображайте
 его в ландшафтной ориентации.
  **/
