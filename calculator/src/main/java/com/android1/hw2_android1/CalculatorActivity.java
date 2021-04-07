@@ -5,10 +5,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.android1.hw2_android1.business_logic.Calculations;
+import com.android1.hw2_android1.business_logic.MySavedInstanceState;
 
 public class CalculatorActivity extends AppCompatActivity {
 
@@ -25,6 +27,10 @@ public class CalculatorActivity extends AppCompatActivity {
     private Button btn_division;
     private Button btn_equals;
     private final Calculations calculations = new Calculations();
+    private MySavedInstanceState savedOperationValues = new MySavedInstanceState();
+    private final String operationValuesKey = "operationValuesKey";
+    private final String operationResultKey = "operationResultKey";
+    private TextView updateTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +47,28 @@ public class CalculatorActivity extends AppCompatActivity {
         setNumberButtonListeners();
     }
 
-// Label for next update
-//    @Override
-//    protected void onSaveInstanceState(@NonNull Bundle outState) {
-//        outState.putSerializable(btn_1, counterInfo);
-//        super.onSaveInstanceState(outState);
-//    }
-// End Label.
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putSerializable(operationValuesKey, savedOperationValues);
+        outState.putSerializable(operationResultKey, savedOperationValues);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        savedOperationValues = (MySavedInstanceState)savedInstanceState.getSerializable(operationValuesKey);
+        savedOperationValues = (MySavedInstanceState)savedInstanceState.getSerializable(operationResultKey);
+        updateValuesTextViews();
+    }
+
+    // For RestoreInstanceState
+    private void updateValuesTextViews() {
+        String textValue = String.valueOf(savedOperationValues.getValue());
+        String textResult = String.valueOf(savedOperationValues.getResult());
+        updateVariableText(textValue);
+        updateResultText(textResult);
+    }
 
     private void findViews() {
         inputText = findViewById(R.id.calc_inputTextView);
@@ -104,11 +125,14 @@ public class CalculatorActivity extends AppCompatActivity {
     private void updateVariableText(String calculations) {
         String text = String.valueOf(calculations);
         inputText.setText(text);
+        savedOperationValues.setValueForSavedInstanceState(text);
     }
 
     private void updateResultText(String calculations) {
         String text = String.valueOf(calculations);
         resultText.setText(text);
+        savedOperationValues.setResultForSavedInstanceState(text);
+
     }
 }
 
