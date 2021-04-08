@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">HW2_Android1</string>
+<!--    for Lesson 2    -->
+<!--    <string name="_1btn">1</string>
+    <string name="_2btn">2</string>
+    <string name="_3btn">3</string>
+    <string name="_4btn">4</string>
+    <string name="_5btn">5</string>
+    <string name="_6btn">6</string>
+    <string name="_9btn">9</string>
+    <string name="_8btn">8</string>
+    <string name="_7btn">7</string>
+    <string name="benderPhrase">Поцелуй его блестящий зад!</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_0">0</string>
+    <string name="_point">.</string>
+    <string name="long_text">GeekBrains — это образовательная экосистема, в которой любой человек может получить всё для успешного профессионального будущего. Мы поможем пройти путь от выбора профессии до выхода на работу по новой специальности. Преподаватели-практики обучают программированию, маркетингу, управлению, дизайну, аналитике и продакшену. После успешного завершения учебы гарантируем стажировку и помощь в трудоустройстве. На наших ресурсах вы найдете более 1000 бесплатных вебинаров, которые помогают развиваться профессионально и прокачивают soft skills — непрофильные навыки для эффективной работы. За 10 лет в экосистеме зарегистрировались и получили доступ к новым знаниям более 4,5 млн человек. А в 2016 году мы вошли в состав Mail.ru Group — крупнейшего IT-гиганта России. Присоединяйтесь, чтобы освоить новую профессию и поменять жизнь к лучшему!</string>-->
+
+<!--    for Home Work 2    -->
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_0">0</string>
+    <string name="_point">.</string>
+    <string name="_equals">=</string>
+    <string name="_del">del</string>
+    <string name="_plus">+</string>
+    <string name="_minus">-</string>
+    <string name="_increase">*</string>
+    <string name="_division">/</string>
+    <string name="inputString">ввод</string>
+    <string name="resultStringView">результат</string>
+</resources>
