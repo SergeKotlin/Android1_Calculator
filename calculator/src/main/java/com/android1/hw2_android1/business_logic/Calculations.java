@@ -44,19 +44,27 @@ public class Calculations {
             resetCalculateValuesBuffer(false);
         } else {
             if (currentCmd.equals("+")) {
-                currentResult += Double.parseDouble(valueToCalculate);
+                if (!valueToCalculate.equals("")) {
+                    currentResult += Double.parseDouble(valueToCalculate);
+                }
                 resetCalculateValuesBuffer();
             }
             if (currentCmd.equals("-")) {
-                currentResult -= Double.parseDouble(valueToCalculate);
+                if (!valueToCalculate.equals("")) {
+                    currentResult -= Double.parseDouble(valueToCalculate);
+                }
                 resetCalculateValuesBuffer();
             }
             if (currentCmd.equals("*")) {
-                currentResult *= Double.parseDouble(valueToCalculate);
+                if (!valueToCalculate.equals("")) {
+                    currentResult *= Double.parseDouble(valueToCalculate);
+                }
                 resetCalculateValuesBuffer();
             }
             if (currentCmd.equals("/")) {
-                currentResult /= Double.parseDouble(valueToCalculate);
+                if (!valueToCalculate.equals("")) {
+                    currentResult /= Double.parseDouble(valueToCalculate);
+                }
                 resetCalculateValuesBuffer();
             }
         }
