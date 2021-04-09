@@ -25,7 +25,7 @@
         android:gravity="start"
         android:text="@string/resultStringView"
         android:textSize="@dimen/sizeTextResultView_landscape"
-        android:textColor="@color/colorTextView_landscape"
+        style="@style/RedColor"
         android:background="#ABABC7E3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_equals" />
@@ -38,7 +38,7 @@
         android:gravity="start"
         android:text="@string/inputString"
         android:textSize="@dimen/sizeTextInputView"
-        android:textColor="@color/colorTextView_landscape"
+        style="@style/RedColor"
         android:background="#ABABC7E3"
         app:layout_constraintBottom_toTopOf="@+id/calc_resultText"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_plus"
@@ -83,6 +83,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_delete"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -132,6 +133,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_plus"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -181,6 +183,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_minus"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -205,6 +208,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
     <Button
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_increase"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -217,6 +221,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
     <Button
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_division"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -230,6 +235,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_equals"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"

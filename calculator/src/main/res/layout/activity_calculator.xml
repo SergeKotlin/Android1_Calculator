@@ -7,8 +7,6 @@
     android:id="@+id/calculator_linear_layout_id"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/calculator_layout_id">
@@ -39,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 <!--1st row-->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_1"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -51,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_2"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -63,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_3"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -75,7 +73,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_delete"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -88,7 +87,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
 <!--2nd row-->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_4"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -100,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@id/calc_btn_1"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_5"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -112,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@id/calc_btn_2"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_6"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -124,7 +123,8 @@
         app:layout_constraintTop_toBottomOf="@id/calc_btn_3"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_plus"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
 <!--3d row-->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_7"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@id/calc_btn_4"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_8"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
         app:layout_constraintTop_toBottomOf="@+id/calc_btn_5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_9"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -173,7 +173,8 @@
         app:layout_constraintTop_toBottomOf="@id/calc_btn_6"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_minus"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -186,7 +187,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
 <!--4th row-->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/calc_btn_0"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -198,7 +199,8 @@
         app:layout_constraintTop_toBottomOf="@+id/calc_btn_7"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_increase"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -210,7 +212,8 @@
         app:layout_constraintTop_toBottomOf="@+id/calc_btn_8"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_division"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
@@ -222,7 +225,8 @@
         app:layout_constraintEnd_toStartOf="@id/calc_btn_equals"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/BlackColor"
         android:id="@+id/calc_btn_equals"
         android:layout_width="@dimen/size_num_buttons"
         android:layout_height="wrap_content"
