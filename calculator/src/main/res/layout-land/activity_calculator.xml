@@ -19,14 +19,15 @@
 
     <TextView
         android:id="@+id/calc_resultText"
+        style="@style/RedColor"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/height_result_text_view_landscape"
         android:layout_marginStart="@dimen/horizontalTopGuideline"
+        android:layout_marginBottom="24dp"
+        android:background="#ABABC7E3"
         android:gravity="start"
         android:text="@string/resultStringView"
         android:textSize="@dimen/sizeTextResultView_landscape"
-        style="@style/RedColor"
-        android:background="#ABABC7E3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_equals" />
 
