@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HW4_Android1</string>
+    <string name="app_name">HW5_Android1</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>
@@ -19,4 +19,5 @@
     <string name="_division">/</string>
     <string name="inputString">ввод</string>
     <string name="resultStringView">результат</string>
+    <string name="hint_for_switcher_theme">Потушить свет</string>
 </resources>

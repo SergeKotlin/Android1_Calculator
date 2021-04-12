@@ -7,11 +7,14 @@ package com.android1.hw2_android1.business_logic;
 // без Сериализации&Десериализации, без рефлексии. Но замороченнее.
 // А мне заморочек не надо сейчас =)
 
+    import android.content.res.Resources;
+
     import java.io.Serializable;
 
 public class MySavedInstanceState implements Serializable {
     private String value = "ввод";
     private String result = "результат";
+    private Resources.Theme current_theme;
 
     public String getValue() {
         return value;
@@ -27,5 +30,13 @@ public class MySavedInstanceState implements Serializable {
 
     public void setResultForSavedInstanceState(String preRotationResult) {
         this.result = preRotationResult;
+    }
+
+    public Resources.Theme getCurrent_theme() {
+        return current_theme;
+    }
+
+    public void setCurrent_theme(Resources.Theme current_theme) {
+        this.current_theme = current_theme;
     }
 }
