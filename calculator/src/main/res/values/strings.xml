@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lesson4_Android1</string>
-    <!--    for Lesson 4    -->
+    <!--    for Lesson 4_1    -->
+<!--    <string name="app_name">Lesson4_Android1</string>-->
     <string name="language">English</string>
     <string name="density" translatable="false">DPI</string>
     <string name="orientation">Portland</string>
@@ -14,28 +14,16 @@
     <string name="descriptionNight_mode">Night mode</string>
     <string name="descriptionScreen_format">Screen format</string>
     <string name="descriptionVersion">Version</string>
-    <string name="logo">Logo</string>
-    <string name="textView">TextView</string>
+    <string name="logo" translatable="false">Logo</string>
+    <string name="textView" translatable="false">TextView</string>
 
-    <!--
-        &lt;!&ndash;    for Home Work 2    &ndash;&gt;
-        <string name="_1">1</string>
-        <string name="_2">2</string>
-        <string name="_3">3</string>
-        <string name="_4">4</string>
-        <string name="_5">5</string>
-        <string name="_6">6</string>
-        <string name="_7">7</string>
-        <string name="_8">8</string>
-        <string name="_9">9</string>
-        <string name="_0">0</string>
-        <string name="_point">.</string>
-        <string name="_equals">=</string>
-        <string name="_del">del</string>
-        <string name="_plus">+</string>
-        <string name="_minus">-</string>
-        <string name="inputString">ввод</string>
-        <string name="resultStringView">результат</string>
-        <string name="hello">Hello</string>
-        <string name="language_english" translatable="false">Language - English</string>-->
+    <!--  for Lesson 4_2 StylesAndThemes  -->
+    <string name="app_name">Lesson4.2 - StylesAndThemes</string>
+    <string name="name" translatable="false">name</string>
+    <string name="password" translatable="false">password</string>
+    <string name="my_cool_style" translatable="false">My cool style</string>
+    <string name="material_light" translatable="false">Material light</string>
+    <string name="material_light_action_bar_dark" translatable="false">Material light action bar dark</string>
+    <string name="material_dark" translatable="false">Material dark</string>
+
 </resources>
