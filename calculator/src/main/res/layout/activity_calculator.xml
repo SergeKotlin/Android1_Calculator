@@ -246,14 +246,26 @@
         app:layout_constraintEnd_toEndOf="@+id/calc_btn_equals"
         app:layout_constraintStart_toStartOf="@+id/calc_btn_0"
         app:layout_constraintTop_toBottomOf="@id/calc_btn_equals">
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/calc_btn_switcher_theme"
-            android:layout_marginTop="@dimen/switch_theme"
+        <RadioGroup
+            android:id="@+id/calc_btn_chooser_theme"
+            android:layout_marginTop="@dimen/chooser_theme"
             android:gravity="start|center_vertical"
-            android:layout_width="@dimen/switcher_theme_width"
+            android:layout_width="@dimen/chooser_theme_width"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_for_switcher_theme"
-            />
+            tools:ignore="UselessParent">
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/calc_btn_AppThemeLightStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/light_on_style" />
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/calc_btn_AppThemeNightmareStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_grey"
+                android:text="@string/light_off_style" />
+        </RadioGroup>
+
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

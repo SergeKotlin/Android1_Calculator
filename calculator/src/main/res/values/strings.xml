@@ -19,5 +19,6 @@
     <string name="_division">/</string>
     <string name="inputString">ввод</string>
     <string name="resultStringView">результат</string>
-    <string name="hint_for_switcher_theme">Потушить свет</string>
+    <string name="light_on_style">Дневная</string>
+    <string name="light_off_style">Потушить свет</string>
 </resources>
