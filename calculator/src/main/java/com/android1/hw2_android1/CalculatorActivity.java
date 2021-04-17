@@ -48,6 +48,9 @@ public class CalculatorActivity extends AppCompatActivity {
         // Устанавливать тему надо только до установки макета активити (вовремя .onCreate(...))
         setTheme(getAppTheme(R.style.ThemeHW2_Android1));
         setContentView(R.layout.activity_calculator);
+        //TODO #1 Насколько я понял recreate() - здесь точка пересоздания?
+        // После setContentView()?
+        // Т.о. setTheme() выше своего рода тема по умолчанию, лишь при запуске приложения.
 
         ConstraintLayout calc_layout = findViewById(R.id.calculator_layout_id);
         LinearLayout calc_linear_layout = findViewById(R.id.calculator_linear_layout_id);
@@ -57,6 +60,11 @@ public class CalculatorActivity extends AppCompatActivity {
         setOperationsBtnBehaviour();
         setNumberButtonListeners();
         setShowChooserThemeBtnListener();
+
+        //TODO #3 Как в themes.xml управлять цветами?? Где мной невиданная энциклопедия colorPrimary/colorSecondary/ ......?
+        // Как поменять цвет не по типу элемента, а по id?
+        // Как вставить через тему новое изображение? Кидал тупо в drawable картинку - творился настоящий Nightmare
+        // Почему добавив <item name="android:textColor">@color/white</item> цвет меняется - но перезатирается новым текстом??
     }
 
     @Override
@@ -100,7 +108,7 @@ public class CalculatorActivity extends AppCompatActivity {
         chooserThemeListener(findViewById(R.id.calc_btn_AppThemeNightmareStyle),
                 AppThemeNightmareStyle);
         theme_chooser_radio_group = findViewById(R.id.calc_btn_chooser_theme);
-        //TODO ПОЧЕМУ ПАДАЕТ?? И ЧТО ЭТО ЗА КУСОК ТАКОЙ - ЕСЛИ БЕЗ НЕГО ВСЁ-РАВНО КАК НАДО РАБОТАЕТ! ДАН УЧИТЕЛЯМИ, КАК ЕСТЬ, С СЛОЖНЫМИ ВЫЗОВАМИ - БЕЗ ПОЯСНЕНИЙ.
+        //TODO #2 ПОЧЕМУ ПАДАЕТ?? И ЧТО ЭТО ЗА КУСОК ТАКОЙ - ЕСЛИ БЕЗ НЕГО ВСЁ-РАВНО КАК НАДО РАБОТАЕТ! ДАН УЧИТЕЛЯМИ, КАК ЕСТЬ, С СЛОЖНЫМИ ВЫЗОВАМИ - БЕЗ ПОЯСНЕНИЙ.
 //        ((MaterialRadioButton)theme_chooser_radio_group.getChildAt(getCodeStyle(AppThemeLightStyle))).setChecked(true);
     }
 
