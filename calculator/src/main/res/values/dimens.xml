@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // Отступы, размеры шрифтов, элементов и т.д.
+    <dimen name="button_text">13sp</dimen>
+    <dimen name="size_num_buttons">60dp</dimen>
+    <dimen name="size_spec_buttons">70dp</dimen>
+    <dimen name="size_work_text_view">250dp</dimen>
+    <dimen name="sizeInputView">20sp</dimen>
+    <dimen name="sizeResultView">20sp</dimen>
+    <dimen name="horizontalTopGuideline">20dp</dimen>
+    <!--  Lesson 4_1  -->
+    <!--<dimen name="textSize">30sp</dimen>-->
+
+    <!--  for Lesson 4_2 StylesAndThemes  -->
+    <dimen name="margin">8dp</dimen>
+    <dimen name="textSize">42sp</dimen>
+</resources>
