@@ -21,4 +21,6 @@
     <string name="resultStringView">результат</string>
     <string name="light_on_style">Дневная</string>
     <string name="light_off_style">Потушить свет</string>
+    <string name="hint_btn_show_chooser_theme">тема</string>
+    <string name="fontFamily_btn_show_chooser_theme">sans-serif-light</string>
 </resources>

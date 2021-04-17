@@ -10,6 +10,44 @@
     android:layout_height="wrap_content"
     android:id="@+id/calculator_layout_id"
     android:layout_gravity="start|bottom">
+
+    <RadioGroup
+
+        android:id="@+id/calc_btn_chooser_theme"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/calc_btn_1"
+        app:layout_constraintEnd_toStartOf="@id/calc_btn_show_chooser_theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/calc_btn_AppThemeLightStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/light_on_style" />
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/calc_btn_AppThemeNightmareStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey"
+            android:text="@string/light_off_style" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calc_btn_show_chooser_theme"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:layout_gravity="end"
+        android:backgroundTint="@color/background_btn_show_chooser_theme"
+        android:fontFamily="@string/fontFamily_btn_show_chooser_theme"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="@string/hint_btn_show_chooser_theme"
+        android:textSize="@dimen/textSize_btn_show_chooser_theme"
+        app:layout_constraintBottom_toBottomOf="@id/calc_btn_chooser_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calc_btn_chooser_theme" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineOfTop"
         android:layout_width="wrap_content"
@@ -43,7 +81,7 @@
         android:background="#ABABC7E3"
         app:layout_constraintBottom_toTopOf="@+id/calc_resultText"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_plus"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_chooser_theme" />
     <!--1st row-->
 
     <Button
@@ -55,7 +93,7 @@
         app:layout_constraintBottom_toTopOf="@+id/calc_btn_4"
         app:layout_constraintEnd_toStartOf="@+id/calc_btn_2"
         app:layout_constraintStart_toEndOf="@+id/guidelineOfTop"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_chooser_theme"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
     <Button
@@ -67,7 +105,7 @@
         app:layout_constraintBottom_toTopOf="@+id/calc_btn_5"
         app:layout_constraintEnd_toStartOf="@+id/calc_btn_3"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_chooser_theme"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
     <Button
@@ -79,7 +117,7 @@
         app:layout_constraintBottom_toTopOf="@id/calc_btn_6"
         app:layout_constraintEnd_toStartOf="@id/calc_btn_delete"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_chooser_theme"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -93,7 +131,7 @@
         app:layout_constraintBottom_toTopOf="@id/calc_btn_plus"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/calc_btn_3"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc_btn_chooser_theme"
         app:layout_constraintVertical_chainStyle="packed" />
     <!--2nd row-->
     <Button

@@ -18,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.android1.hw2_android1.business_logic.Calculations;
 import com.android1.hw2_android1.business_logic.MySavedInstanceState;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 
 public class CalculatorActivity extends AppCompatActivity {
@@ -27,7 +28,8 @@ public class CalculatorActivity extends AppCompatActivity {
     private final int[] numberButtonIds = new int[]{R.id.calc_btn_0, R.id.calc_btn_1,
             R.id.calc_btn_2, R.id.calc_btn_3, R.id.calc_btn_4, R.id.calc_btn_5, R.id.calc_btn_6,
             R.id.calc_btn_7, R.id.calc_btn_8, R.id.calc_btn_9};
-    private Button btn_del, btn_plus, btn_minus, btn_increase, btn_division, btn_equals;
+    private MaterialButton btn_del, btn_plus, btn_minus, btn_increase, btn_division, btn_equals, btn_show_chooser_theme;
+    private RadioGroup theme_chooser_radio_group;
     private final Calculations calculations = new Calculations();
     private MySavedInstanceState savedMyInstanceState = new MySavedInstanceState();
     private final String operationValuesKey = "operationValuesKey", operationResultKey = "operationResultKey";
@@ -52,8 +54,9 @@ public class CalculatorActivity extends AppCompatActivity {
         calc_linear_layout.setBackgroundResource(R.drawable.ic_bender_xml);
 
         findViews();
-        setIncreaseCounterBtnBehaviour();
+        setOperationsBtnBehaviour();
         setNumberButtonListeners();
+        setShowChooserThemeBtnListener();
     }
 
     @Override
@@ -89,18 +92,19 @@ public class CalculatorActivity extends AppCompatActivity {
         btn_division = findViewById(R.id.calc_btn_division);
         btn_equals = findViewById(R.id.calc_btn_equals);
         btn_del = findViewById(R.id.calc_btn_delete);
+        btn_show_chooser_theme = findViewById(R.id.calc_btn_show_chooser_theme);
 
         // Инициализация радио-кнопок очень похожа, поэтому создан метод для переиспользования
         chooserThemeListener(findViewById(R.id.calc_btn_AppThemeLightStyle),
                 AppThemeLightStyle);
         chooserThemeListener(findViewById(R.id.calc_btn_AppThemeNightmareStyle),
                 AppThemeNightmareStyle);
-        RadioGroup rg = findViewById(R.id.calc_btn_chooser_theme);
+        theme_chooser_radio_group = findViewById(R.id.calc_btn_chooser_theme);
         //TODO ПОЧЕМУ ПАДАЕТ?? И ЧТО ЭТО ЗА КУСОК ТАКОЙ - ЕСЛИ БЕЗ НЕГО ВСЁ-РАВНО КАК НАДО РАБОТАЕТ! ДАН УЧИТЕЛЯМИ, КАК ЕСТЬ, С СЛОЖНЫМИ ВЫЗОВАМИ - БЕЗ ПОЯСНЕНИЙ.
-//        ((MaterialRadioButton)rg.getChildAt(getCodeStyle(AppThemeLightStyle))).setChecked(true);
+//        ((MaterialRadioButton)theme_chooser_radio_group.getChildAt(getCodeStyle(AppThemeLightStyle))).setChecked(true);
     }
 
-    private void setIncreaseCounterBtnBehaviour() {
+    private void setOperationsBtnBehaviour() {
         btn_del.setOnClickListener(v -> {
             actionsWithNumbers("d");
         });
@@ -132,6 +136,12 @@ public class CalculatorActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void setShowChooserThemeBtnListener() {
+        btn_show_chooser_theme.setOnClickListener(v -> {
+            theme_chooser_radio_group.setVisibility(View.VISIBLE);
+        });
     }
 
     private void actionsWithNumbers(String s) {
@@ -177,6 +187,8 @@ public class CalculatorActivity extends AppCompatActivity {
             setAppTheme(codeStyle);
             // пересоздадим активити, чтобы тема применилась
             recreate();
+            // прятать меню выбора темы нет необходимости, после recreate() - оно сбрасывается само собой
+                // theme_chooser_radio_group.setVisibility(View.INVISIBLE);
         });
     }
 

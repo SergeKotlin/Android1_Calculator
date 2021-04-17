@@ -248,6 +248,7 @@
         app:layout_constraintTop_toBottomOf="@id/calc_btn_equals">
         <RadioGroup
             android:id="@+id/calc_btn_chooser_theme"
+            android:visibility="invisible"
             android:layout_marginTop="@dimen/chooser_theme"
             android:gravity="start|center_vertical"
             android:layout_width="@dimen/chooser_theme_width"
@@ -265,7 +266,17 @@
                 android:background="@color/dark_grey"
                 android:text="@string/light_off_style" />
         </RadioGroup>
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calc_btn_show_chooser_theme"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/chooser_theme"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:hint="@string/hint_btn_show_chooser_theme"
+            android:textSize="@dimen/textSize_btn_show_chooser_theme"
+            android:fontFamily="@string/fontFamily_btn_show_chooser_theme"
+            android:backgroundTint="@color/background_btn_show_chooser_theme"
+            android:gravity="center_vertical|center_horizontal"/>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
