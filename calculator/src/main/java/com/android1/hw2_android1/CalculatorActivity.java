@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.android1.hw2_android1.business_logic.Calculations;
 import com.android1.hw2_android1.business_logic.MySavedInstanceState;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
 public class CalculatorActivity extends AppCompatActivity {
 
@@ -26,31 +28,32 @@ public class CalculatorActivity extends AppCompatActivity {
             R.id.calc_btn_2, R.id.calc_btn_3, R.id.calc_btn_4, R.id.calc_btn_5, R.id.calc_btn_6,
             R.id.calc_btn_7, R.id.calc_btn_8, R.id.calc_btn_9};
     private Button btn_del, btn_plus, btn_minus, btn_increase, btn_division, btn_equals;
-    private SwitchCompat btn_switcher_theme;
     private final Calculations calculations = new Calculations();
     private MySavedInstanceState savedMyInstanceState = new MySavedInstanceState();
     private final String operationValuesKey = "operationValuesKey", operationResultKey = "operationResultKey";
-    private static final String nameSharedPreference = "CURRENT_THEME";
+    // Имя настроек
+    private static final String NameSharedPreference = "CURRENT_THEME";
+    // Имя параметра в настройках (т.е "ключ")
     private static final String calcTheme = "CALCULATOR_THEME";
+    // (дефолтные значения)
+    private static final int AppThemeLightStyle = 0;
+    private static final int AppThemeNightmareStyle = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        // Устанавливать тему надо только до установки макета активити (вовремя .onCreate(...))
+        setTheme(getAppTheme(R.style.ThemeHW2_Android1));
         setContentView(R.layout.activity_calculator);
 
-        savedMyInstanceState.setCurrent_theme(getTheme());
-
         ConstraintLayout calc_layout = findViewById(R.id.calculator_layout_id);
-//        calc_layout.setBackgroundResource(R.drawable.ic_launcher_background);
-//        calc_layout.setBackgroundResource(R.drawable.ic_bender_xml);
         LinearLayout calc_linear_layout = findViewById(R.id.calculator_linear_layout_id);
         calc_linear_layout.setBackgroundResource(R.drawable.ic_bender_xml);
 
         findViews();
         setIncreaseCounterBtnBehaviour();
         setNumberButtonListeners();
-        themeListener();
     }
 
     @Override
@@ -69,7 +72,6 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     // For RestoreInstanceState
-
     private void updateValuesTextViews() {
         String textValue = String.valueOf(savedMyInstanceState.getValue());
         String textResult = String.valueOf(savedMyInstanceState.getResult());
@@ -88,7 +90,14 @@ public class CalculatorActivity extends AppCompatActivity {
         btn_equals = findViewById(R.id.calc_btn_equals);
         btn_del = findViewById(R.id.calc_btn_delete);
 
-        btn_switcher_theme = findViewById(R.id.calc_btn_switcher_theme);
+        // Инициализация радио-кнопок очень похожа, поэтому создан метод для переиспользования
+        chooserThemeListener(findViewById(R.id.calc_btn_AppThemeLightStyle),
+                AppThemeLightStyle);
+        chooserThemeListener(findViewById(R.id.calc_btn_AppThemeNightmareStyle),
+                AppThemeNightmareStyle);
+        RadioGroup rg = findViewById(R.id.calc_btn_chooser_theme);
+        //TODO ПОЧЕМУ ПАДАЕТ?? И ЧТО ЭТО ЗА КУСОК ТАКОЙ - ЕСЛИ БЕЗ НЕГО ВСЁ-РАВНО КАК НАДО РАБОТАЕТ! ДАН УЧИТЕЛЯМИ, КАК ЕСТЬ, С СЛОЖНЫМИ ВЫЗОВАМИ - БЕЗ ПОЯСНЕНИЙ.
+//        ((MaterialRadioButton)rg.getChildAt(getCodeStyle(AppThemeLightStyle))).setChecked(true);
     }
 
     private void setIncreaseCounterBtnBehaviour() {
@@ -148,7 +157,48 @@ public class CalculatorActivity extends AppCompatActivity {
 
     }
 
-    private void themeListener() {
+    private int getAppTheme(int codeStyle) {
+        return codeStyleToStyleId(getCodeStyle(codeStyle));
+    }
+
+    private int codeStyleToStyleId(int codeStyle){
+        switch(codeStyle){
+            case AppThemeNightmareStyle:
+                return R.style.My_Night_mode;
+            case AppThemeLightStyle:
+            default:
+                return R.style.ThemeHW2_Android1;
+        }
+    }
+
+    private void chooserThemeListener(MaterialRadioButton button, final int codeStyle){
+        button.setOnClickListener(v -> {
+            // сохраним настройки
+            setAppTheme(codeStyle);
+            // пересоздадим активити, чтобы тема применилась
+            recreate();
+        });
+    }
+
+    // Сохранение настроек
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        // Настройки сохраняются посредством специального класса editor.
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(calcTheme, codeStyle);
+        //Немедленное сохранение - commit(), отложенное - apply()
+        editor.apply();
+    }
+
+    // Чтение настроек, параметр «тема»
+    private int getCodeStyle(int codeStyle){
+        // Работаем через специальный класс сохранения и чтения настроек
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        //Прочитать тему, если настройка не найдена - взять по умолчанию
+        return sharedPref.getInt(calcTheme, codeStyle);
+    }
+
+    /*private void themeListener() {
 //        if (btn_switcher_theme != null && savedMyInstanceState.getCurrent_theme() == getTheme()) {
         if (btn_switcher_theme != null) {
             btn_switcher_theme.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) (v, hasFocus) -> {
@@ -159,20 +209,20 @@ public class CalculatorActivity extends AppCompatActivity {
     //                    editor.putInt(calcTheme, R.style.My_Night_mode);
     //                    editor.apply();
 
-                    /*finish();
+                    *//*finish();
                     setTheme(R.style.My_Night_mode);
-                    startActivity(getIntent());*/
+                    startActivity(getIntent());*//*
 
-                    /*setTheme(R.style.My_Night_mode);
-                    setContentView(R.layout.activity_calculator);*/
+                    *//*setTheme(R.style.My_Night_mode);
+                    setContentView(R.layout.activity_calculator);*//*
                 }
             });
         }
-    }
+    }*/
 }
 
 /* HW5
-1. Создайте активити с настройками, где включите выбор темы приложения.
+✓ 1. Создайте активити с настройками, где включите выбор темы приложения.
 3. * Сделайте интент-фильтр для запуска калькулятора извне, а также напишите тестовое приложение, запускающее приложение-калькулятор.
-(✓ 2. Доделайте приложение «Калькулятор». Это последний урок с созданием приложения «Калькулятор».)
+(2. Доделайте приложение «Калькулятор». Это последний урок с созданием приложения «Калькулятор».)
 **/ //Serega, sure

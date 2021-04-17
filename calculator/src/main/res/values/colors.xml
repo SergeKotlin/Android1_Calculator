@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bender_background">#89B2B2</color>
     <color name="colorTextView_landscape">#AC1212</color>
+    <color name="dark_grey">#4D000000</color>
 </resources>
