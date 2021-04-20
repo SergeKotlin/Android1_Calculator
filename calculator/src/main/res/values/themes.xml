@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="ThemeHW2_Android1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#E5A5E8</item>
+        <item name="colorPrimaryVariant">#F95DF7</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/bender_background</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="My_Night_mode" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/purple_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">#1CE3D4AE</item> <!-- !!! Проблемный участок кода.
+        Перекрашивает Бендера в чёрный, но ломает читаемость TextViews -->
+        <item name="android:textColorHint">?attr/colorOnPrimary</item>
+<!--    Почему добавив <item name="android:textColor">@color/white</item> цвет меняется - но перезатирается новым текстом?? -->
+<!--    Как вставить через тему новое изображение? Кидал тупо в background drawable картинку - творился настоящий Nightmare!
+        <item name="android:background">@drawable/ic_bender_xml_nightmare</item> -->
+    </style>
+</resources>
