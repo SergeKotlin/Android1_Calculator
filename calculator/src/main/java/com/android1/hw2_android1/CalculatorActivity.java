@@ -217,32 +217,10 @@ public class CalculatorActivity extends AppCompatActivity {
         //Прочитать тему, если настройка не найдена - взять по умолчанию
         return sharedPref.getInt(calcTheme, codeStyle);
     }
-
-    /*private void themeListener() {
-//        if (btn_switcher_theme != null && savedMyInstanceState.getCurrent_theme() == getTheme()) {
-        if (btn_switcher_theme != null) {
-            btn_switcher_theme.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) (v, hasFocus) -> {
-                if (btn_switcher_theme.isEnabled()) {
-                    setTheme(R.style.My_Night_mode);
-//                    SharedPreferences sharedPref =  getSharedPreferences(nameSharedPreference, MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPref.edit();
-    //                    editor.putInt(calcTheme, R.style.My_Night_mode);
-    //                    editor.apply();
-
-                    *//*finish();
-                    setTheme(R.style.My_Night_mode);
-                    startActivity(getIntent());*//*
-
-                    *//*setTheme(R.style.My_Night_mode);
-                    setContentView(R.layout.activity_calculator);*//*
-                }
-            });
-        }
-    }*/
 }
 
 /* HW5
 ✓ 1. Создайте активити с настройками, где включите выбор темы приложения.
-3. * Сделайте интент-фильтр для запуска калькулятора извне, а также напишите тестовое приложение, запускающее приложение-калькулятор.
-(2. Доделайте приложение «Калькулятор». Это последний урок с созданием приложения «Калькулятор».)
+✓ 3. * Сделайте интент-фильтр для запуска калькулятора извне, а также напишите тестовое приложение, запускающее приложение-калькулятор.
+(✓ 2. Доделайте приложение «Калькулятор». Это последний урок с созданием приложения «Калькулятор».)
 **/ //Serega, sure

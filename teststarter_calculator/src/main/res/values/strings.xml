@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestStarterCalculator</string>
+    <string name="starter_open_calculator">Запустить калькулятор</string>
+    <string name="some_info_at_app_starter">Hello</string>
+</resources>

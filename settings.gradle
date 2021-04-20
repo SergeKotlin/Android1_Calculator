@@ -1,2 +1,3 @@
+include ':teststarter_calculator'
 include ':calculator'
 rootProject.name = "HW2_Android1"

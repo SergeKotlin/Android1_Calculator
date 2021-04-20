@@ -15,6 +15,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter android:label=".TestStarterOfTheCalculator">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Принимаем URI с началом "calculator://run" -->
+                <data android:scheme="calculator"
+                    android:host="run" />
+            </intent-filter>
         </activity>
     </application>
 
