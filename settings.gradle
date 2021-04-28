@@ -1,0 +1,4 @@
+include ':starterapp'
+include ':calledapp'
+include ':calculator'
+rootProject.name = "HW2_Android1"

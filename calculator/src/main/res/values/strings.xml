@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lesson5_Android1</string>
+    <string name="open_second_activity">open second activity</string>
+    <string name="hello_textMainActivity">Hello</string>
+    <string name="increase_btn">increase</string>
+    <string name="counter">0</string>
+    <string name="enter_the_phone">Введите телефон</string>
+    <string name="enter_the_password">Введите пароль</string>
+    <string name="enter_url">Введите адрес</string>
+    <string name="text_for_second_activity">Phrase for Second Activity</string>
+    <string name="open_url">open url</string>
+</resources>
